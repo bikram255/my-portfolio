@@ -15,6 +15,29 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Amitabh Soni | DevOps Engineer & Educator",
   description: "Personal portfolio of Amitabh Soni, a DevOps Engineer specializing in Kubernetes, AWS, and GitOps.",
+  openGraph: {
+    title: "Amitabh Soni | DevOps Engineer & Educator",
+    description: "Building resilient, automated infrastructure for modern digital ecosystems.",
+    url: "https://amitabh.cloud",
+    siteName: "Amitabh Soni Portfolio",
+    images: [
+      {
+        url: "/img5.png", // Using the profile image as the preview for now
+        width: 1200,
+        height: 630,
+        alt: "Amitabh Soni - DevOps Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amitabh Soni | DevOps Engineer & Educator",
+    description: "Building resilient, automated infrastructure for modern digital ecosystems.",
+    creator: "@Amitabh_DevOps",
+    images: ["/img5.png"],
+  },
 };
 
 export default function RootLayout({

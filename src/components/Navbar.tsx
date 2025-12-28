@@ -27,17 +27,22 @@ export default function Navbar() {
                     headers['Authorization'] = `token ${pat}`;
                 }
 
-                const response = await fetch('https://api.github.com/users/Amitabh-DevOps/events/public', { headers });
+                const response = await fetch(`https://api.github.com/users/Amitabh-DevOps/events/public?t=${new Date().getTime()}`, {
+                    headers,
+                    cache: 'no-store'
+                });
                 const data = await response.json();
-                const pushEvent = data.find((event: any) => event.type === 'PushEvent');
+                const validEvent = data.find((event: any) => event.type === 'PushEvent' || event.type === 'CreateEvent');
 
-                if (pushEvent) {
-                    const commitDate = new Date(pushEvent.created_at);
+                if (validEvent) {
+                    const commitDate = new Date(validEvent.created_at);
                     const now = new Date();
                     const diffMs = now.getTime() - commitDate.getTime();
                     const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
 
-                    if (diffHours < 24) {
+                    if (diffHours < 1) {
+                        setLastCommit("Just Now");
+                    } else if (diffHours < 24) {
                         setLastCommit(`${diffHours}h ago`);
                     } else {
                         const diffDays = Math.floor(diffHours / 24);
