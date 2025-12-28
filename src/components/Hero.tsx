@@ -13,7 +13,7 @@ export default function Hero() {
             <div className="absolute top-[20%] -right-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-10 animate-pulse" />
             <div className="absolute bottom-[10%] -left-[5%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10" />
 
-            <div className="container max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="container max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                 {/* Left Side: Content */}
                 <div className="order-2 lg:order-1 space-y-10">
@@ -32,7 +32,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[0.9]"
+                            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[0.9]"
                         >
                             Amitabh <br />
                             <span className="text-slate-500 font-extrabold italic">Soni.</span>
@@ -41,7 +41,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-xl md:text-2xl text-slate-400 font-medium max-w-lg leading-relaxed"
+                            className="text-lg md:text-2xl text-slate-400 font-medium max-w-lg leading-relaxed"
                         >
                             DevOps Engineer & Cloud Architect building resilient, automated infrastructure for modern digital ecosystems.
                         </motion.p>
@@ -89,11 +89,11 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="order-1 lg:order-2 flex justify-center lg:justify-end"
                 >
-                    <div className="relative group">
+                    <div className="relative group z-[10000]">
                         <div className="absolute inset-0 bg-primary/20 rounded-[40px] blur-[60px] group-hover:blur-[80px] transition-all duration-500 -z-10" />
                         <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-[40px] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
                             <Image
-                                src="/img5.png"
+                                src="/img5.jpeg"
                                 alt="Amitabh Soni"
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"

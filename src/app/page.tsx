@@ -79,24 +79,24 @@ export default function Home() {
 
         {/* Experience Section */}
         <section id="experience" className="scroll-mt-32">
-          <span className="section-subtitle text-center block">Journey</span>
-          <h2 className="section-title text-center mt-4">Professional Deployment.</h2>
+          <span className="section-subtitle">Journey</span>
+          <h2 className="section-title mt-4">Professional Deployment.</h2>
 
           <div className="mt-20 max-w-4xl mx-auto">
             <motion.div
               {...fadeInUp}
-              className="glass-morphism p-10 md:p-12 rounded-[40px] border-white/5 relative overflow-hidden group"
+              className="glass-morphism p-6 md:p-12 rounded-[40px] border-white/5 relative overflow-hidden group"
             >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
                 <div>
                   <h3 className="text-3xl font-black text-white italic tracking-tight">DevOps Engineer</h3>
                   <p className="text-primary font-bold tracking-widest text-sm mt-1">TRAINWITHSHUBHAM</p>
                 </div>
-                <div className="flex flex-col items-end gap-2">
+                <div className="flex flex-col items-start md:items-end gap-2">
                   <span className="px-5 py-2 rounded-full bg-white/5 border border-white/5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
                     Dec 2024 — Present
                   </span>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <span className="hud-metric text-[10px] text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20 uppercase tracking-widest">40% Efficiency Gain</span>
                     <span className="hud-metric text-[10px] text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20 uppercase tracking-widest">60% Faster Ops</span>
                   </div>
@@ -167,7 +167,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="scroll-mt-32">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
             <div className="space-y-4">
               <span className="section-subtitle">Modules</span>
               <h2 className="section-title">Selected Works.</h2>
@@ -231,21 +231,21 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="scroll-mt-32">
-          <div className="relative glass-morphism p-12 md:p-20 rounded-[60px] border-white/5 overflow-hidden">
+          <div className="relative glass-morphism p-8 md:p-20 rounded-[40px] md:rounded-[60px] border-white/5 overflow-hidden">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[120px] -z-10" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-              <div className="space-y-10">
-                <h2 className="text-6xl font-black text-white italic tracking-tighter leading-none uppercase">Let's <br /> <span className="text-slate-600">Connect.</span></h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div className="space-y-8 md:space-y-10">
+                <h2 className="text-4xl md:text-6xl font-black text-white italic tracking-tighter leading-none uppercase">Let's <br /> <span className="text-slate-600">Connect.</span></h2>
                 <p className="text-xl text-slate-400 font-medium max-w-sm">Ready to build high-performance infrastructure? I'm always open to new challenges.</p>
 
                 <div className="flex gap-4 flex-wrap">
-                  <SocialIcon icon={<Linkedin />} href="https://linkedin.com/in/amitabh-devops" />
-                  <SocialIcon icon={<Github />} href="https://github.com/Amitabh-DevOps" />
-                  <SocialIcon icon={<Twitter />} href="https://x.com/Amitabh_DevOps" />
-                  <SocialIcon icon={<Youtube />} href="https://www.youtube.com/@Amitabh004" />
-                  <SocialIcon icon={<BookText />} href="https://amitabhdevops.hashnode.dev/" />
-                  <SocialIcon icon={<Mail />} href="mailto:amitabhdevops2024@gmail.com" />
+                  <SocialIcon icon={<Linkedin />} href="https://linkedin.com/in/amitabh-devops" label="LinkedIn Profile" />
+                  <SocialIcon icon={<Github />} href="https://github.com/Amitabh-DevOps" label="GitHub Profile" />
+                  <SocialIcon icon={<Twitter />} href="https://x.com/Amitabh_DevOps" label="X (Twitter) Profile" />
+                  <SocialIcon icon={<Youtube />} href="https://www.youtube.com/@Amitabh004" label="YouTube Channel" />
+                  <SocialIcon icon={<BookText />} href="https://amitabhdevops.hashnode.dev/" label="Hashnode Blog" />
+                  <SocialIcon icon={<Mail />} href="mailto:amitabhdevops2024@gmail.com" label="Send Email" />
                 </div>
               </div>
 
@@ -387,9 +387,16 @@ function FloatingInput({ label, placeholder, name, type = "text", required }: { 
   );
 }
 
-function SocialIcon({ icon, href }: { icon: React.ReactNode, href: string }) {
+function SocialIcon({ icon, href, label }: { icon: React.ReactNode, href: string, label: string }) {
   return (
-    <a href={href} target="_blank" className="p-5 glass-morphism rounded-full border-white/5 text-slate-500 hover:text-white hover:border-primary/40 transition-all duration-300">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      title={label}
+      className="p-5 glass-morphism rounded-full border-white/5 text-slate-500 hover:text-white hover:border-primary/40 transition-all duration-300"
+    >
       {/* @ts-ignore */}
       {React.isValidElement(icon) ? React.cloneElement(icon as React.ReactElement, { size: 24 }) : icon}
     </a>

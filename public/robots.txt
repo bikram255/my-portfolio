@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amitabh.cloud/sitemap.xml

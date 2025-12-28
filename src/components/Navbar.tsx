@@ -61,7 +61,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-[100] px-6 py-6 md:py-8 pointer-events-none">
+        <nav className="fixed top-0 left-0 right-0 z-[20000] px-6 py-6 md:py-8 pointer-events-none">
             <div className="container max-w-6xl mx-auto flex items-center justify-between pointer-events-auto">
 
                 {/* Logo */}
@@ -96,10 +96,10 @@ export default function Navbar() {
                     ))}
                     <div className="w-px h-6 bg-white/10 mx-2" />
                     <div className="flex items-center gap-1 pr-2">
-                        <Link href="https://github.com/Amitabh-DevOps" target="_blank" className="p-2 text-slate-400 hover:text-primary transition-colors">
+                        <Link href="https://github.com/Amitabh-DevOps" target="_blank" rel="noopener noreferrer" title="GitHub Profile" className="p-2 text-slate-400 hover:text-primary transition-colors">
                             <Github className="w-5 h-5" />
                         </Link>
-                        <Link href="/Amitabh-Resume.pdf" target="_blank" className="p-2 text-slate-400 hover:text-primary transition-colors">
+                        <Link href="https://drive.google.com/file/d/1sKX_HU1bZXQY0QLf1r8hUNrc2XWCEXUb/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="View Resume" className="p-2 text-slate-400 hover:text-primary transition-colors">
                             <FileText className="w-5 h-5" />
                         </Link>
                     </div>
@@ -121,7 +121,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-24 left-6 right-6 lg:hidden glass-morphism p-8 rounded-3xl z-[101] pointer-events-auto"
+                        className="absolute top-24 left-6 right-6 lg:hidden glass-morphism p-8 rounded-3xl z-[20001] pointer-events-auto"
                     >
                         <div className="flex flex-col gap-6">
                             {navItems.map((item) => (
@@ -136,10 +136,10 @@ export default function Navbar() {
                             ))}
                             <div className="h-px bg-white/10 w-full" />
                             <div className="flex gap-4">
-                                <Link href="https://github.com/Amitabh-DevOps" target="_blank" className="text-slate-400 hover:text-primary transition-colors">
+                                <Link href="https://github.com/Amitabh-DevOps" target="_blank" rel="noopener noreferrer" title="GitHub Profile" className="text-slate-400 hover:text-primary transition-colors">
                                     <Github className="w-6 h-6" />
                                 </Link>
-                                <Link href="/Amitabh-Resume.pdf" target="_blank" className="text-slate-400 hover:text-primary transition-colors">
+                                <Link href="https://drive.google.com/file/d/1sKX_HU1bZXQY0QLf1r8hUNrc2XWCEXUb/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="View Resume" className="text-slate-400 hover:text-primary transition-colors">
                                     <FileText className="w-6 h-6" />
                                 </Link>
                             </div>

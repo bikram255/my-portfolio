@@ -75,10 +75,7 @@ body::before {
 
 /* Clean Typography Utilities */
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  @apply text-slate-100;
+  @apply text-4xl md:text-5xl text-slate-100;
 }
 
 .section-subtitle {
