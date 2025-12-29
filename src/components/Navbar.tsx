@@ -22,11 +22,11 @@ export default function Navbar() {
             <div className="container max-w-6xl mx-auto flex items-center justify-between pointer-events-auto">
 
                 {/* Logo */}
-                <Link href="/" className="group flex items-center gap-2 md:gap-4">
+                <a href="#home" className="group flex items-center gap-2 md:gap-4">
                     <span className="text-2xl font-black tracking-tighter text-white">
                         Amitabh<span className="text-primary italic">.</span>
                     </span>
-                </Link>
+                </a>
 
                 {/* Desktop Nav Pills */}
                 <div className="hidden lg:flex items-center gap-1 glass-morphism p-1 rounded-full border-white/5 bg-black/40">

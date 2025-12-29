@@ -4,13 +4,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import { fadeInUp } from "@/lib/animations";
+
 export default function SkillItem({ name, icon, color }: { name: string, icon: string, color?: string }) {
     return (
         <motion.div
-            variants={{
-                initial: { opacity: 0, y: 30 },
-                whileInView: { opacity: 1, y: 0 }
-            }}
+            variants={fadeInUp}
             whileHover={{ y: -5 }}
             className="relative p-6 glass-morphism rounded-2xl flex flex-col items-center gap-4 hover:border-primary/30 transition-all group border-white/5 overflow-hidden"
         >
