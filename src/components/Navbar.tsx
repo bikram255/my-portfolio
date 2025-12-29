@@ -124,15 +124,15 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-24 left-6 right-6 lg:hidden glass-morphism p-8 rounded-3xl z-[20001] pointer-events-auto"
+                        className="absolute top-20 left-4 right-4 lg:hidden glass-morphism p-6 rounded-3xl z-[20001] pointer-events-auto"
                     >
-                        <div className="flex flex-col gap-6">
+                        <div className="flex flex-col gap-4">
                             {navItems.map((item) => (
                                 <a
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="text-xl font-bold text-slate-300 hover:text-primary transition-colors"
+                                    className="text-lg font-bold text-slate-300 hover:text-primary transition-colors"
                                 >
                                     {item.name}
                                 </a>
@@ -140,10 +140,10 @@ export default function Navbar() {
                             <div className="h-px bg-white/10 w-full" />
                             <div className="flex gap-4">
                                 <Link href="https://github.com/Amitabh-DevOps" target="_blank" rel="noopener noreferrer" title="GitHub Profile" className="text-slate-400 hover:text-primary transition-colors">
-                                    <Github className="w-6 h-6" />
+                                    <Github className="w-5 h-5" />
                                 </Link>
                                 <Link href="https://drive.google.com/file/d/1sKX_HU1bZXQY0QLf1r8hUNrc2XWCEXUb/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="View Resume" className="text-slate-400 hover:text-primary transition-colors">
-                                    <FileText className="w-6 h-6" />
+                                    <FileText className="w-5 h-5" />
                                 </Link>
                             </div>
                         </div>
