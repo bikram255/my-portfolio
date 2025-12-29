@@ -16,10 +16,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amitabh.cloud"),
-  title: "Amitabh Soni | DevOps Engineer & Educator",
+  title: "Amitabh Soni | DevOps Engineer",
   description: "Personal portfolio of Amitabh Soni, a DevOps Engineer specializing in Kubernetes, AWS, and GitOps.",
   openGraph: {
-    title: "Amitabh Soni | DevOps Engineer & Educator",
+    title: "Amitabh Soni | DevOps Engineer",
     description: "Building resilient, automated infrastructure for modern digital ecosystems.",
     url: "https://amitabh.cloud",
     siteName: "Amitabh Soni Portfolio",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amitabh Soni | DevOps Engineer & Educator",
+    title: "Amitabh Soni | DevOps Engineer",
     description: "Building resilient, automated infrastructure for modern digital ecosystems.",
     creator: "@Amitabh_DevOps",
     images: ["/img5.jpeg"],
