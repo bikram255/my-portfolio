@@ -32,7 +32,7 @@ export default function Hero() {
                     const diffMinutes = Math.floor(diffMs / (1000 * 60));
                     const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
 
-                    if (diffMinutes < 5) {
+                    if (diffMinutes < 1) {
                         setLastCommit("Just Now");
                     } else if (diffMinutes < 60) {
                         setLastCommit(`${diffMinutes}m ago`);
@@ -50,7 +50,7 @@ export default function Hero() {
         };
 
         fetchGithubActivity();
-        const interval = setInterval(fetchGithubActivity, 3600000); // Refresh every hour
+        const interval = setInterval(fetchGithubActivity, 60000); // Refresh every 1 minute
         return () => clearInterval(interval);
     }, []);
     return (
