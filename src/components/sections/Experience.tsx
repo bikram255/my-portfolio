@@ -14,13 +14,13 @@ export default function Experience() {
             <div className="mt-20 max-w-4xl mx-auto">
                 <motion.div
                     {...fadeInUp}
-                    className="glass-morphism p-6 md:p-12 rounded-[40px] border-white/5 relative overflow-hidden group hover:border-primary/20 transition-all duration-1000 ease-in-out"
+                    className="glass-morphism p-6 md:p-12 rounded-[40px] border-white/5 relative overflow-hidden group hover:border-primary/20 transition-all duration-1500 ease-in-out"
                 >
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/0 group-hover:bg-primary/5 blur-[120px] transition-all duration-1000 -z-10" />
+                    <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/0 group-hover:bg-primary/5 blur-[120px] transition-all duration-1500 -z-10" />
 
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
                         <div>
-                            <h3 className="text-3xl font-black text-white italic tracking-tight group-hover:text-primary transition-colors duration-1000">DevOps Engineer</h3>
+                            <h3 className="text-3xl font-black text-white italic tracking-tight group-hover:text-primary transition-colors duration-1500">DevOps Engineer</h3>
                             <p className="text-primary font-bold tracking-widest text-sm mt-1">TRAINWITHSHUBHAM</p>
                         </div>
                         <div className="flex flex-col items-start md:items-end gap-2">
@@ -42,8 +42,8 @@ export default function Experience() {
                             "Developed observability dashboards with Prometheus and Grafana",
                             "Mentored 20+ learners on DevOps best practices and high-performance culture"
                         ].map((item, i) => (
-                            <div key={i} className="flex gap-4 items-start text-slate-400 group-hover:text-slate-200 transition-colors duration-1000">
-                                <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-colors duration-1000 flex-shrink-0 shadow-[0_0_10px_rgba(56,189,248,0)] group-hover:shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
+                            <div key={i} className="flex gap-4 items-start text-slate-400 group-hover:text-slate-200 transition-colors duration-1500">
+                                <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-colors duration-1500 flex-shrink-0 shadow-[0_0_10px_rgba(56,189,248,0)] group-hover:shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
                                 <p className="text-base md:text-lg leading-tight font-medium">{item}</p>
                             </div>
                         ))}

@@ -15,11 +15,11 @@ export default function SkillItem({ name, icon, color }: { name: string, icon: s
         >
             {/* Brand Glow Backdrop */}
             <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-1500"
                 style={{ backgroundColor: color ? `${color}15` : 'rgba(56, 189, 248, 0.05)' }}
             />
 
-            <div className="relative w-12 h-12 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500 z-10">
+            <div className="relative w-12 h-12 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-1500 z-10">
                 <Image
                     src={icon}
                     alt={name}
@@ -29,7 +29,7 @@ export default function SkillItem({ name, icon, color }: { name: string, icon: s
                     unoptimized
                 />
             </div>
-            <span className="relative text-xs font-bold text-slate-500 group-hover:text-white transition-colors z-10">{name}</span>
+            <span className="relative text-xs font-bold text-slate-500 group-hover:text-white transition-colors duration-1500 z-10">{name}</span>
         </motion.div>
     );
 }
