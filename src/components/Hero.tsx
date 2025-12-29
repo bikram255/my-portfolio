@@ -14,33 +14,54 @@ export default function Hero() {
             try {
                 const pat = process.env.NEXT_PUBLIC_GITHUB_PAT;
                 const headers: HeadersInit = {};
+                console.log("PAT Check:", pat ? "PAT Found" : "No PAT Found");
+
                 if (pat) {
                     headers['Authorization'] = `token ${pat}`;
                 }
 
-                const response = await fetch(`https://api.github.com/users/Amitabh-DevOps/events/public?t=${new Date().getTime()}`, {
+                const timestamp = new Date().getTime();
+                const buster = Math.random().toString(36).substring(7);
+                // Using the authenticated events endpoint which is generally more real-time
+                const apiUrl = `https://api.github.com/users/Amitabh-DevOps/events?t=${timestamp}&z=${buster}`;
+
+                const response = await fetch(apiUrl, {
                     headers,
                     cache: 'no-store'
                 });
                 const data = await response.json();
-                const validEvent = data.find((event: any) => event.type === 'PushEvent' || event.type === 'CreateEvent');
 
-                if (validEvent) {
-                    const commitDate = new Date(validEvent.created_at);
-                    const now = new Date();
-                    const diffMs = now.getTime() - commitDate.getTime();
-                    const diffMinutes = Math.floor(diffMs / (1000 * 60));
-                    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+                // Debug log to help identify if events are appearing
+                console.log("GitHub Pulse Check:", {
+                    status: response.status,
+                    eventCount: data.length,
+                    latestEvent: data[0]?.type,
+                    latestDate: data[0]?.created_at
+                });
 
-                    if (diffMinutes < 1) {
-                        setLastCommit("Just Now");
-                    } else if (diffMinutes < 60) {
-                        setLastCommit(`${diffMinutes}m ago`);
-                    } else if (diffHours < 24) {
-                        setLastCommit(`${diffHours}h ago`);
-                    } else {
-                        const diffDays = Math.floor(diffHours / 24);
-                        setLastCommit(`${diffDays}d ago`);
+                if (Array.isArray(data) && data.length > 0) {
+                    // Look for ANY activity, not just push/create
+                    const validEvent = data.find((event: any) =>
+                        ['PushEvent', 'CreateEvent', 'WatchEvent', 'ForkEvent', 'PublicEvent', 'PullRequestEvent'].includes(event.type)
+                    );
+
+                    if (validEvent) {
+                        const commitDate = new Date(validEvent.created_at);
+                        const now = new Date();
+                        const diffMs = now.getTime() - commitDate.getTime();
+                        const diffMinutes = Math.floor(diffMs / (1000 * 60));
+                        const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+
+                        if (diffMinutes < 1) {
+                            setLastCommit("Just Now");
+                        } else if (diffMinutes < 60) {
+                            setLastCommit(`${diffMinutes}m ago`);
+                        } else if (diffHours < 24) {
+                            setLastCommit(`${diffHours}h ago`);
+                        } else {
+                            const diffDays = Math.floor(diffHours / 24);
+                            setLastCommit(`${diffDays}d ago`);
+                        }
                     }
                 }
             } catch (error) {
@@ -50,7 +71,7 @@ export default function Hero() {
         };
 
         fetchGithubActivity();
-        const interval = setInterval(fetchGithubActivity, 60000); // Refresh every 1 minute
+        const interval = setInterval(fetchGithubActivity, 30000); // Check every 30 seconds for faster feedback during debug
         return () => clearInterval(interval);
     }, []);
     return (
