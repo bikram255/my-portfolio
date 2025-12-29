@@ -15,6 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://amitabh.cloud"),
   title: "Amitabh Soni | DevOps Engineer & Educator",
   description: "Personal portfolio of Amitabh Soni, a DevOps Engineer specializing in Kubernetes, AWS, and GitOps.",
   openGraph: {
