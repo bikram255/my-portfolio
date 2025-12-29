@@ -13,7 +13,7 @@ export default function Hero() {
             <div className="absolute top-[20%] -right-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-10 animate-pulse" />
             <div className="absolute bottom-[10%] -left-[5%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10" />
 
-            <div className="container max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="container max-w-6xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                 {/* Left Side: Content */}
                 <div className="order-2 lg:order-1 space-y-10">

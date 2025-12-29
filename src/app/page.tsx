@@ -46,7 +46,7 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      <div className="container max-w-6xl mx-auto px-6 space-y-40 pb-40">
+      <div className="container max-w-6xl mx-auto px-4 md:px-6 space-y-40 pb-40">
 
         {/* About Section */}
         <section id="about" className="scroll-mt-32">
@@ -182,7 +182,7 @@ export default function Home() {
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             <ProjectCard
               image="/Project01.jpg"
@@ -256,7 +256,7 @@ export default function Home() {
       </div>
 
       <footer className="border-t border-white/5 py-20 bg-background/50">
-        <div className="container mx-auto px-6 text-center space-y-6">
+        <div className="container mx-auto px-4 md:px-6 text-center space-y-6">
           <span className="text-2xl font-black italic tracking-tighter text-white">Amitabh.</span>
           <p className="text-slate-600 font-bold text-sm tracking-widest uppercase italic">Built with passion for DevOps & Automation // ©2026</p>
         </div>
@@ -269,9 +269,9 @@ function ProjectCard({ image, title, desc, tags, link }: { image: string, title:
   return (
     <motion.div
       variants={fadeInUp}
-      className={`group glass-morphism p-4 md:p-6 rounded-[40px] border-white/5 hover:border-primary/20 transition-all duration-500 overflow-hidden relative`}
+      className={`group glass-morphism p-4 md:p-5 rounded-[40px] border-white/5 hover:border-primary/20 transition-all duration-500 overflow-hidden relative`}
     >
-      <div className="relative aspect-video w-full rounded-[32px] overflow-hidden mb-8 bg-slate-950/50">
+      <div className="relative aspect-video w-full rounded-[32px] overflow-hidden mb-6 bg-slate-950/50">
         <Image
           src={image}
           alt={title}

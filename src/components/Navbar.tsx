@@ -64,23 +64,23 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-[20000] px-6 py-6 md:py-8 pointer-events-none">
+        <nav className="fixed top-0 left-0 right-0 z-[20000] px-4 md:px-6 py-6 md:py-8 pointer-events-none">
             <div className="container max-w-6xl mx-auto flex items-center justify-between pointer-events-auto">
 
                 {/* Logo */}
-                <Link href="/" className="group flex items-center gap-4">
+                <Link href="/" className="group flex items-center gap-2 md:gap-4">
                     <span className="text-2xl font-black tracking-tighter text-white">
                         Amitabh<span className="text-primary italic">.</span>
                     </span>
-                    <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 group-hover:border-primary/30 transition-colors">
-                        <span className="relative flex h-2 w-2">
+                    <div className="flex items-center gap-1.5 md:gap-2 px-2 py-1 md:px-3 md:py-1.5 rounded-full bg-white/5 border border-white/10 group-hover:border-primary/30 transition-colors">
+                        <span className="relative flex h-1.5 w-1.5 md:h-2 md:w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 md:h-2 md:w-2 bg-primary"></span>
                         </span>
                         <div className="flex flex-col">
-                            <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest leading-none">System Pulse</span>
+                            <span className="text-[7px] md:text-[9px] font-black text-slate-500 uppercase tracking-widest leading-none">System Pulse</span>
                             {lastCommit && (
-                                <span className="text-[7px] font-bold text-primary italic uppercase tracking-tighter mt-0.5">{lastCommit}</span>
+                                <span className="text-[6px] md:text-[7px] font-bold text-primary italic uppercase tracking-tighter mt-0.5">{lastCommit}</span>
                             )}
                         </div>
                     </div>
