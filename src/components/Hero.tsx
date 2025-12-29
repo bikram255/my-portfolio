@@ -136,13 +136,13 @@ export default function Hero() {
                     className="order-1 lg:order-2 flex justify-center lg:justify-end"
                 >
                     <div className="relative group z-[10000]">
-                        <div className="absolute inset-0 bg-primary/20 rounded-[40px] blur-[60px] group-hover:blur-[80px] transition-all duration-500 -z-10" />
+                        <div className="absolute inset-0 bg-primary/20 rounded-[40px] blur-[60px] group-hover:blur-[80px] transition-all duration-1000 -z-10" />
                         <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-[40px] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
                             <Image
                                 src="/img5.jpeg"
                                 alt="Amitabh Soni"
                                 fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                className="object-cover group-hover:scale-105 transition-all duration-[1500ms] ease-in-out grayscale group-hover:grayscale-0"
                                 priority
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
