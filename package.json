@@ -1,31 +1,30 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
+  "name": "portfolio-2026",
+  "version": "1.0.0",
+  "description": "A high-performance DevOps portfolio designed for technical authority and minimalist aesthetic. This project focuses on refined interactions, efficient performance, and clear communication of engineering expertise.",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview": "npx serve . -s -l 5000",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "check-format": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "validate:html": "html-validate \"**/*.html\"",
+    "ci-check": "npm run check-format && npm run validate:html"
   },
-  "dependencies": {
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.23.26",
-    "lenis": "^1.3.17",
-    "lucide-react": "^0.562.0",
-    "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "tailwind-merge": "^3.4.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amitabh-DevOps/Portfolio-2026.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amitabh-DevOps/Portfolio-2026/issues"
+  },
+  "homepage": "https://github.com/Amitabh-DevOps/Portfolio-2026#readme",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.1",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "html-validate": "^10.5.0",
+    "prettier": "^3.7.4",
+    "serve": "^14.2.5"
   }
 }
